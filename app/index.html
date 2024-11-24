@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskChain - Manajemen Tugas</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f7f6;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #333;
+        }
+        #content {
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding: 30px;
+            width: 400px;
+            text-align: center;
+            animation: fadeIn 1s ease-out;
+        }
+        h2 {
+            color: #4CAF50;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        input[type="text"], input[type="date"] {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+            box-sizing: border-box;
+            transition: border 0.3s ease;
+        }
+        input[type="text"]:focus, input[type="date"]:focus {
+            border-color: #4CAF50;
+            outline: none;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 14px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        hr {
+            border: 1px solid #f1f1f1;
+            margin: 20px 0;
+        }
+        #tasks {
+            margin-top: 20px;
+            text-align: left;
+        }
+        .task {
+            background-color: #f9f9f9;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        .task h4 {
+            margin: 0;
+            font-size: 18px;
+            color: #333;
+        }
+        .task p {
+            font-size: 14px;
+            color: #777;
+            margin: 5px 0;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <div id="content">
+        <h2>TaskChain - Aplikasi Manajemen Tugas</h2>
+        <input type="text" id="taskName" placeholder="Nama Tugas" required>
+        <input type="text" id="taskDesc" placeholder="Deskripsi Tugas" required>
+        <input type="date" id="taskDeadline" required>
+        <button onclick="App.createTask()">Buat Tugas</button>
+        <hr>
+        <div id="tasks"></div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
+
